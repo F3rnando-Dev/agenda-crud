@@ -9,7 +9,7 @@ public class ConnectionFactory {
     private static final String USERNAME= "root";
 
     //senha do user do mysql
-    private static final String USERPASSWORD= "123456";
+    private static final String USERPASSWORD= "root";
 
     //Caminho do banco, porta, nome do banco
     private static final String DATABASE_URL = "jdbc:mysql://localhost:3306/agenda?characterEncoding=utf8";
@@ -36,10 +36,6 @@ public class ConnectionFactory {
             System.out.println("Conexão obtida com sucesso!");
             con.close();
         }
-
-
-
-
 
     }
 

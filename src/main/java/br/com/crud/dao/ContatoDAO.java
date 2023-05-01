@@ -1,11 +1,11 @@
 package br.com.crud.dao;
 
-import br.com.crud.factory.ConnectionFactory;
-import br.com.crud.model.ContatoModel;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+
+import br.com.crud.model.*;
+import br.com.crud.factory.*;
 
 public class ContatoDAO {
     /*
@@ -36,9 +36,6 @@ public class ContatoDAO {
 
             //Executar a query
             pstm.execute();
-
-
-
 
         } catch (Exception e) {
             e.printStackTrace();

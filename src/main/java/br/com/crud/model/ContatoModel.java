@@ -8,6 +8,8 @@ public class ContatoModel {
     private int idade;
     private Date dataCadastro;
 
+
+
     public int getId() {
         return id;
     }
@@ -40,3 +42,4 @@ public class ContatoModel {
         this.dataCadastro = dataCadastro;
     }
 }
+

@@ -1,16 +1,17 @@
 package br.com.crud.main;
 
-import br.com.crud.dao.ContatoDAO;
-import br.com.crud.model.ContatoModel;
+import br.com.crud.dao.*;
+import br.com.crud.model.*;
 
 import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
-
+        ContatoModel contato = new ContatoModel();
         ContatoDAO contatoDao = new ContatoDAO();
 
-        ContatoModel contato = new ContatoModel();
+
+
         contato.setNome("Abimaleque");
         contato.setIdade(40);
         contato.setDataCadastro(new Date());
