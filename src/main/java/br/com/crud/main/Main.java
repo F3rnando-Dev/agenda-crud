@@ -11,11 +11,17 @@ public class Main {
         ContatoDAO contatoDao = new ContatoDAO();
 
 
+//        Salvar no banco
+//        contato.setNome("Ariame Moanri");
+//        contato.setIdade(23);
+//        contato.setDataCadastro(new Date());
+//        contatoDao.saveContato(contato);
 
-        contato.setNome("Abimaleque");
-        contato.setIdade(40);
-        contato.setDataCadastro(new Date());
-        contatoDao.saveContato(contato);
+        
+//        Ler do banco
+        for (ContatoModel c : ContatoDAO.readContato()) {
+            System.out.println("Contato: "+c.getNome());
+        }
 
     }
 }

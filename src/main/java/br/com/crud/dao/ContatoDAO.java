@@ -10,7 +10,7 @@ import br.com.crud.factory.*;
 public class ContatoDAO {
     /*
      * C: CREATE  -  OK
-     * R: READ    -
+     * R: READ    -f
      * U: UPDATE  -
      * D: DELETE  -
      */
@@ -54,7 +54,8 @@ public class ContatoDAO {
 
     }
 
-    public List<ContatoModel> readContatos(){
+    public static List<ContatoModel> readContato(){
+
         String sql = "SELECT * FROM contatos";
         List<ContatoModel> contatos = new ArrayList<>();
 
@@ -74,16 +75,16 @@ public class ContatoDAO {
 
                 ContatoModel contato = new ContatoModel();
 
-                //Recuperar o ID
+                //Recuperar o ID (nome da coluna do banco)
                 contato.setId(rset.getInt("id"));
 
-                //Recuperar o nome
+                //Recuperar o nome (nome da coluna do banco)
                 contato.setNome(rset.getString("nome"));
 
-                //Recuperar a idade
+                //Recuperar a idade (nome da coluna do banco)
                 contato.setIdade(rset.getInt("idade"));
 
-                //Recuperar a datade cadastro
+                //Recuperar a datade cadastro (nome da coluna do banco)
                 contato.setDataCadastro(rset.getDate("dataCadastro"));
 
                 contatos.add(contato);
@@ -106,7 +107,6 @@ public class ContatoDAO {
             }catch (Exception e){
                 e.printStackTrace();
             }
-
         }
         return contatos;
     }
