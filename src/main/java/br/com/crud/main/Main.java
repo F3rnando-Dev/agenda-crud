@@ -17,15 +17,25 @@ public class Main {
 //        contato.setDataCadastro(new Date());
 //        contatoDao.saveContato(contato);
 
+
+
+
+//        Deletar no banco
+//        contatoDao.deleteContato(1);
+
+
+
+
 //        Atualizar no banco
-        ContatoModel c1 = new ContatoModel();
-        c1.setNome("Ariane Monari Campos");
-        c1.setIdade(23);
-        c1.setDataCadastro(new Date());
-        c1.setId(2);
+//        ContatoModel c1 = new ContatoModel();
+//        c1.setNome("Ariane Monari Campos");
+//        c1.setIdade(23);
+//        c1.setDataCadastro(new Date());
+//        c1.setId(2);
+//        contatoDao.updateContato(c1);
 
-        contatoDao.updateContato(c1);
 
+        
         
 //        Ler do banco
 //        for (ContatoModel c : ContatoDAO.readContato()) {

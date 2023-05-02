@@ -10,9 +10,9 @@ import br.com.crud.factory.*;
 public class ContatoDAO {
     /*
      * C: CREATE  -  OK
-     * R: READ    -f
-     * U: UPDATE  -
-     * D: DELETE  -
+     * R: READ    -  OK
+     * U: UPDATE  -  OK
+     * D: DELETE  -  OK
      */
 
     public void saveContato(ContatoModel contato){
@@ -74,6 +74,41 @@ public class ContatoDAO {
             pstm.setDate(3, new Date(contato.getDataCadastro().getTime()));
 
             pstm.setInt(4, contato.getId());
+
+            //Executar a query
+            pstm.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally{
+            //Fechar as conexoes
+            try{
+                if(pstm != null){
+                    pstm.close();
+                } if(conn != null){
+                    conn.close();
+                }
+            }catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void deleteContato(int id){
+        String sql = "DELETE FROM contatos WHERE id = ?";
+
+        Connection conn = null;
+        PreparedStatement pstm = null;
+
+        try{
+            //Cria conexão com o banco
+            conn = ConnectionFactory.createConnectionToMySQL();
+
+            //Criamos uma preparedStatment pra executarmos uma query
+            pstm = (PreparedStatement) conn.prepareStatement(sql);
+
+            //Adicionar os valores que são esperados pela query
+            pstm.setInt(1, id);
 
             //Executar a query
             pstm.execute();
